@@ -1,0 +1,5 @@
+ALTER TABLE user_role DROP FOREIGN KEY FK_user_role_users_ID
+ALTER TABLE user_role DROP FOREIGN KEY FK_user_role_roles_ID
+DROP TABLE user
+DROP TABLE role
+DROP TABLE user_role

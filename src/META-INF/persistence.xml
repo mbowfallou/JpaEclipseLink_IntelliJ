@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+	<persistence-unit name="JpaEclipseLink_IntelliJ" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.groupeisi.entities.User</class>
+		<class>com.groupeisi.entities.Role</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url"
+					  value="jdbc:mysql://localhost:13000/jpa_eclipselink_intellij"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="mbow"/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="javax.persistence.schemageneration.database.action"
+					  value="create"/><!--none, create, drop-andcreate,drop-->
+
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+			<!--
+				create-tables, create-or-extend-tables, drop-and-create-tables
+			source: https://www.eclipse.org/eclipselink/documentation/2.4/jpa/extensions/p_ddl_generation.htm
+			-->
+			<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.jdbc"/>
+			<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc"/>
+			<property name="eclipselink.ddl-generation.output-mode" value="both"/>
+
+			<property name="javax.persistence.schema-generation.createsource" value="metadata"/>
+			<property name="javax.persistence.schema-generation.dropsource" value="metadata"/>
+			<property name="javax.persistence.sql-load-script-source" value="META-INF/load.sql"/>
+		</properties>
+	</persistence-unit>
+</persistence>
